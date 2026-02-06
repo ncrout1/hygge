@@ -1,0 +1,55 @@
+def prime_factors(number):
+    prime_numbers = []
+    for i in range(2, number + 1):
+        if number % i == 0:          # i is a factor
+            if check_prime(i) == "prime":   # check i, not number
+                prime_numbers.append(i)
+    return prime_numbers
+
+
+
+
+def prime_factor(number):
+    val="prime"
+    prime_numbers=[]
+    for i in range(2,number+1):
+        if(number % i==0):
+            print("firstentering")
+            val=check_prime(i)
+            print(val)
+            if (val=="prime"):
+                print("entering")
+                prime_numbers.append(i)
+               
+    return prime_numbers        
+   
+   
+   
+   
+def check_prime(num):
+    print("getting called")
+    flag=0
+    for i in range(2,num):
+        if(num % i==0):
+            flag=1
+       
+    if (flag!=0):
+        return "Not a prime"
+    return "prime"
+   
+   
+
+# def check_prime(num):
+#     if num < 2:
+#         return "Not a prime"
+#     for i in range(2, num):
+#         if num % i == 0:
+#             return "Not a prime"
+#     return "prim
+
+       
+   
+def main():
+    newval=prime_factor(5)
+    print(newval)
+main()
